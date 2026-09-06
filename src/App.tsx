@@ -252,7 +252,7 @@ export default function App() {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_event, nextSession) => {
+    } = supabase.auth.onAuthStateChange(async (_event: any, nextSession) => {
       if (!mounted) return;
       setSession(nextSession);
       if (nextSession?.user) {
