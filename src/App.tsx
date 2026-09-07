@@ -251,8 +251,9 @@ export default function App() {
     init();
 
     const {
-      data: { subscription },
-    supabase.auth.onAuthStateChange(async (_event: any, nextSession: any) => {
+  data: { subscription },
+} = supabase.auth.onAuthStateChange(
+  async (_event: any, nextSession: any) => {
       if (!mounted) return;
       setSession(nextSession);
       if (nextSession?.user) {
